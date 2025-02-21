@@ -21,7 +21,7 @@ async def find_and_write_to_device(service_uuid, char_uuid, value):
             return
 
         # Запись значения в характеристику
-        await client.write_gatt_char(char_uuid, value.to_bytes(2, byteorder='little'))
+        await client.write_gatt_char(char_uuid, value)
         print(f"Значение {value} успешно записано в характеристику {char_uuid}.")
 
 if __name__ == "__main__":
@@ -32,5 +32,6 @@ if __name__ == "__main__":
     service_uuid = "01942846-0661-7c4a-8953-e76f2ae2e6e2"
     char_uuid = "01942846-0761-7c4a-8953-e76f2ae2e6e2"
     value = sys.argv[1]
-
-    asyncio.run(find_and_write_to_device(service_uuid, char_uuid, value))
+    data=(34812).to_bytes(2,byteorder='little')+b"name\x00"+bytes(value, encoding="utf-8")+b"\x00"
+    print(data)
+    asyncio.run(find_and_write_to_device(service_uuid, char_uuid, data))

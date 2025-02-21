@@ -26,7 +26,7 @@ async def find_and_write_to_device(service_uuid, char_uuid, value):
 
 if __name__ == "__main__":
     if len(sys.argv) != 1:
-        print("Использование: python script.py")
+        print("Использование: python OTA.py")
         sys.exit(1)
 
     service_uuid = "01942846-0661-7c4a-8953-e76f2ae2e6e2"
