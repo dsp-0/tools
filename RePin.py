@@ -27,7 +27,8 @@ async def find_and_write_to_device(service_uuid, char_uuid, value):
 if __name__ == "__main__":
     service_uuid = "01942846-0661-7c4a-8953-e76f2ae2e6e2"
     char_uuid = "01942846-0761-7c4a-8953-e76f2ae2e6e2"
-    value = "\x0D\x10\x11\x12\x13\x19\x1A\x1B\x0E\x15"
+    value = "\x0D\x10\x11\x12\x13\x19\x1A\x1B\x0E\x15" #Version 0.2.0
+#    value = "\x0D\x10\x11\x12\x13\x19\x0E\x1B\x1A\x15" #Version 0.2.1
     data=(34812).to_bytes(2,byteorder='little')+b"pins\x00"+bytes(value, encoding="utf-8")+b"\x00"
     print(data)
     asyncio.run(find_and_write_to_device(service_uuid, char_uuid, data))
