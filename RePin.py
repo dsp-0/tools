@@ -13,7 +13,7 @@ char_uuid = "01942846-0761-7c4a-8953-e76f2ae2e6e2"
 pins = {
     "0.2.0":"\x0D\x10\x11\x12\x13\x19\x1A\x1B\x0E\x15", #Version 0.2.0 pins
     "0.2.1":"\x0D\x10\x11\x12\x13\x19\x0E\x1B\x1A\x15", #Version 0.2.1 pins
-    "0.2.2":"\x0D\x10\x11\x12\x13\x19\x1A\x1B\x0E\x15", #Version 0.2.0 pins
+    "0.2.2":"\x0D\x19\x0E\x1B\x1A\x10\x11\x12\x13\x15", #Version 0.2.2 pins
     "0.3.1":"\x0D\x13\x12\x11\x10\x0E\x1B\x1A\x19\x15", #Version 0.3.1 pins
 }
 async def find_and_write_to_device(hw):
